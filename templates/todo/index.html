@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <h1>ToDo List <a style="float: right;" href="{% url 'todo:task-create' %}">Add Task</a></h1>
+    <br>
+  {% if tasks_list %}
+    {% for task in tasks_list %}
+      <ul>
+        <li>
+          <h3>
+            {{ task }}
+            {% if task.is_done %}
+              <span style="color: green;">Done</span>
+            {% else %}
+              <span style="color: red;">Not Done</span>
+            {% endif %}
+
+            <form method="post" action="{% url 'todo:task-status-update' pk=task.pk %}" style="display: inline;">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary {% if task.is_done %}btn-secondary{% else %}btn-success{% endif %}" value="{% if task.is_done %}Undo{% else %}Complete{% endif %}" style="float: right;" />
+
+              </form>
+          </h3>
+          <p>Created: {{ task.created }}</p>
+          <p>
+            Tags:{% for tag in task.tags.all %}
+              {{ tag }}
+               <a href="{% url 'todo:task-update' task.pk %}">Update</a>
+               <a href="{% url 'todo:task-delete' task.pk %}">Delete</a>
+            {% endfor %}
+          </p>
+        </li>
+        <hr />
+      </ul>
+    {% endfor %}
+  {% else %}
+    <p>There are no Tasks</p>
+  {% endif %}
+{% endblock %}

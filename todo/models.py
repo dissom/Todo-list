@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Tag(models.Model):
@@ -10,10 +11,16 @@ class Tag(models.Model):
 
 class Task(models.Model):
     content = models.TextField()
-    created_datetime = models.DateTimeField(auto_now_add=True)
-    deadline_datetime = models.DateTimeField(null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    deadline = models.DateTimeField(null=True, blank=True)
     is_done = models.BooleanField(default=False)
     tags = models.ManyToManyField(Tag, related_name="tasks")
 
+    def get_absolute_url(self):
+        return reverse("todo:task-detail", kwargs={"pk": self.pk})
+
     def __str__(self):
         return self.content
+
+    class Meta:
+        ordering = ["-is_done", "-created"]
