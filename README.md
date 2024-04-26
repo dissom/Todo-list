@@ -34,11 +34,11 @@ python manage.py runserver
 
 ## Demo
 
-![Screenshot 1](pictures/Знімок%екрана%(663).png)
-![Screenshot 2](pictures/Знімок%екрана%(664).png)
-![Screenshot 3](pictures/Знімок%екрана%(665).png)
-![Screenshot 4](pictures/Знімок%екрана%(666).png)
-![Screenshot 5](pictures/Знімок%екрана%(667).png)
-![Screenshot 6](pictures/Знімок%екрана%(668).png)
-![Screenshot 7](pictures/Знімок%екрана%(669).png)
-![Screenshot 8](pictures/Знімок%екрана%(670).png)
+![Screenshot 1](pictures/Знімок%20екрана%20(663).png)
+![Screenshot 2](pictures/Знімок%20екрана%20(664).png)
+![Screenshot 3](pictures/Знімок%20екрана%20(665).png)
+![Screenshot 4](pictures/Знімок%20екрана%20(666).png)
+![Screenshot 5](pictures/Знімок%20екрана%20(667).png)
+![Screenshot 6](pictures/Знімок%20екрана%20(668).png)
+![Screenshot 7](pictures/Знімок%20екрана%20(669).png)
+![Screenshot 8](pictures/Знімок%20екрана%20(670).png)
